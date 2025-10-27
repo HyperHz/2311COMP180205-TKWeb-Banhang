@@ -25,7 +25,7 @@ function renderCheckout() {
       return `
         <div class="item">
             <div class="d-flex align-items-center gap-2">
-              <img src="2311COMP180205-TKWeb-Banhang/${p.img}" alt="${p.name}">
+              <img src="${p.img}" alt="${p.name}">
               <div>
                   <p class="mb-0 fw-semibold">${p.name}</p>
                   <small>x${i.qty}</small>

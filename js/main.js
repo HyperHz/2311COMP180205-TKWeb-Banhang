@@ -8,7 +8,7 @@ function renderFeatured(){
     featuredRow.innerHTML = items.map(p => `
         <div class="col-12 col-sm-6 col-md-4 feature-col">
             <div class="card card-plant h-100">
-                <img src="2311COMP180205-TKWeb-Banhang/${p.img}" class="card-img-top" alt="${p.name}">
+                <img src="${p.img}" class="card-img-top" alt="${p.name}">
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title">${p.name}</h5>
                     <p class="price mb-3">${p.price.toLocaleString()}₫</p>

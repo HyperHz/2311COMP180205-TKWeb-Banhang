@@ -18,7 +18,7 @@ function renderList(list){
   productList.innerHTML = list.map(p => `
     <div class="col-12 col-sm-6 col-md-4 mb-4">
       <div class="card card-plant h-100">
-        <img src="2311COMP180205-TKWeb-Banhang/${p.img}" alt="${p.name}">
+        <img src="${p.img}" alt="${p.name}">
         <div class="card-body d-flex flex-column">
           <h5>${p.name}</h5>
           <p class="price mb-3">${p.price.toLocaleString()}₫</p>

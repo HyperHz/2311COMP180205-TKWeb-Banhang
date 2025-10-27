@@ -20,7 +20,7 @@ function renderDetail(){
     productDetail.innerHTML = `
     <div class="product-wrap">
         <div class="product-left text-center">
-        <img src="2311COMP180205-TKWeb-Banhang/${product.img}" alt="${product.name}" class="product-img">
+        <img src="${product.img}" alt="${product.name}" class="product-img">
         </div>
         <div class="product-right">
         <h2>${product.name}</h2>
@@ -80,7 +80,7 @@ function renderReviews(){
         <div class="border rounded p-3 mb-3 bg-white shadow-sm">
             <strong>${r.name}</strong>
             <p class="mb-1">${r.text}</p>
-            ${r.img ? `<img src="2311COMP180205-TKWeb-Banhang/${r.img}" class="rounded mt-2" style="max-width:150px">` : ''}
+            ${r.img ? `<img src="${r.img}" class="rounded mt-2" style="max-width:150px">` : ''}
         </div>
         `).join('');
     }

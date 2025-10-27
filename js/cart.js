@@ -28,7 +28,7 @@ function renderCart(){
         <div class="cart-item">
             <div class="cart-left">
             <input type="checkbox" class="form-check-input me-2" onchange="calcTotal()">
-            <img src="2311COMP180205-TKWeb-Banhang/${p.img}" alt="${p.name}">
+            <img src="${p.img}" alt="${p.name}">
             <div>
                 <p class="cart-name mb-1">${p.name}</p>
                 <p class="cart-price mb-0">${p.price.toLocaleString()}₫</p>

@@ -31,7 +31,7 @@ function renderWishlist() {
         return `
         <div class="col-md-4">
             <div class="wish-card">
-                <img src="2311COMP180205-TKWeb-Banhang/${p.img}" alt="${p.name}" onclick="openDetail(${p.id})">
+                <img src="${p.img}" alt="${p.name}" onclick="openDetail(${p.id})">
                 <div class="wish-info">
                     <h6>${p.name}</h6>
                     <p class="text-success fw-bold mb-2">${p.price.toLocaleString()}₫</p>
