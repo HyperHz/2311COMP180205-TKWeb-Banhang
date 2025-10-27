@@ -1,0 +1,40 @@
+img{max-width:100%;height:auto;display:block}
+
+/* tạo lưới cho sp */
+.feature-col { margin-bottom:20px; }
+
+/* hiệu ứng hover chỉ xuất hiện trên máy tính */
+@media (hover: hover) and (pointer: fine) {
+  .card-plant:hover { transform: translateY(-8px); }
+}
+
+/* Navbar nhỏ */
+@media (max-width:576px){
+  .navbar-brand{font-size:18px}
+  .nav-link{font-size:15px;padding:8px 0}
+  .hero-img{max-width:320px}
+  .card-plant img{height:180px}
+}
+
+.product-wrap{display:flex;flex-wrap:wrap;gap:20px}
+.product-wrap>div{flex:1 1 100%}
+@media (min-width:768px){
+  .product-wrap>div:first-child{flex:1 1 45%}
+  .product-wrap>div:last-child{flex:1 1 55%}
+}
+
+.btn{padding:10px 14px;font-size:15px;border-radius:8px}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column-reverse; /* đảo vị trí: hình lên trên, chữ xuống dưới */
+    text-align: center;
+  }
+  .header .header-text {
+    margin-top: 20px;
+  }
+  .header img {
+    max-width: 90%;
+    height: auto;
+  }
+}

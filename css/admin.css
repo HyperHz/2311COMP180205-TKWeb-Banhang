@@ -1,0 +1,20 @@
+body {
+  background-color: #f8f9fa;
+  font-family: "Poppins", sans-serif;
+}
+
+.admin-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: 0.25s ease;
+  cursor: pointer;
+}
+.admin-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+.admin-card h5 {
+  color: #198754;
+  font-weight: 600;
+}

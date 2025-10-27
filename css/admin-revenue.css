@@ -1,0 +1,87 @@
+body {
+  background-color: #f8f9fa;
+  font-family: "Poppins", sans-serif;
+}
+
+.revenue-box {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.chart-box {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+table th, table td {
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .revenue-box {
+    padding: 15px;
+  }
+  .chart-box {
+    padding: 10px;
+  }
+  .modal-dialog {
+    margin: 1rem auto;
+    max-width: 95%;
+  }
+}
+
+/* Thanh navbar cho admin */
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 17px;
+  }
+  .navbar .btn {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}
+
+/* Giúp layout dễ đọc hơn trên mobile */
+@media (max-width: 576px) {
+  .main-content, .container {
+    padding: 10px !important;
+  }
+  h3, h4, h5 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Thẻ card sản phẩm trong admin-products.html */
+@media (max-width: 768px) {
+  #productList .col-md-3, #productList .col-md-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+@media (max-width: 576px) {
+  #productList .col-md-3, #productList .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Giúp biểu đồ tròn admin-revenue.html không bị tràn */
+@media (max-width: 768px) {
+  .chart-box canvas {
+    max-width: 100%;
+    height: auto !important;
+  }
+}
+
+/* Căn chỉnh danh sách khách hàng và đơn hàng */
+@media (max-width: 768px) {
+  .customer-card, .order-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .customer-card h6, .order-card h6 {
+    font-size: 15px;
+  }
+}
