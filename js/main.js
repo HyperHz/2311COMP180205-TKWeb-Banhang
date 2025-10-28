@@ -1,8 +1,6 @@
-// đảm bảo products-data.js đã chạy
 const products = JSON.parse(localStorage.getItem('GL_products') || '[]');
 const featuredRow = document.getElementById('featuredRow');
 
-// hiển thị 3 sản phẩm nổi bật (lấy 3 đầu trong mảng)
 function renderFeatured(){
     const items = products.slice(0,3);
     featuredRow.innerHTML = items.map(p => `
@@ -23,26 +21,23 @@ function renderFeatured(){
 }
 renderFeatured();
 
-// toggle favorite: nếu chưa đăng nhập -> qua login, nếu có -> lưu localStorage GL_favs_{userId}
 window.toggleFav = function(productId){
-  const cur = JSON.parse(localStorage.getItem('GL_currentUser') || 'null');
-  if (!cur) {
-    // chưa login -> chuyển tới login
-    location.href = 'login.html';
-    return;
-    }
-    const key = 'GL_favs_' + cur.id;
-    let favs = JSON.parse(localStorage.getItem(key) || '[]');
-    if (favs.includes(productId)) {
-        favs = favs.filter(x=>x !== productId);
-    } else {
-        favs.push(productId);
-    }
-    localStorage.setItem(key, JSON.stringify(favs));
-  alert('Đã cập nhật danh sách yêu thích');
+    const cur = JSON.parse(localStorage.getItem('GL_currentUser') || 'null');
+    if (!cur) {
+        location.href = 'login.html';
+        return;
+        }
+        const key = 'GL_favs_' + cur.id;
+        let favs = JSON.parse(localStorage.getItem(key) || '[]');
+        if (favs.includes(productId)) {
+            favs = favs.filter(x=>x !== productId);
+        } else {
+            favs.push(productId);
+        }
+        localStorage.setItem(key, JSON.stringify(favs));
+    alert('Đã cập nhật danh sách yêu thích');
 };
 
-// SEARCH:
 document.getElementById('searchForm').addEventListener('submit', function(e){
     e.preventDefault();
     const q = document.getElementById('searchInput').value.trim();

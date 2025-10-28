@@ -4,71 +4,53 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Chi tiết sản phẩm | GreenLife</title>
-
-    <!-- Bootstrap & Font Awesome -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/product.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
-        <a class="navbar-brand fw-bold text-success" href="index.html">🌿 GreenLife</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navMain">
-            <ul class="navbar-nav me-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Sản phẩm</a>
-                <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="products.html?cat=chau-cay-canh">Chậu cây cảnh</a></li>
-                <li><a class="dropdown-item" href="products.html?cat=cay-de-ban">Cây để bàn</a></li>
-                <li><a class="dropdown-item" href="products.html?cat=cay-thuy-sinh">Cây thủy sinh</a></li>
+            <a class="navbar-brand fw-bold text-success" href="index.html">🌿 GreenLife</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMain">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Sản phẩm</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="products.html?cat=chau-cay-canh">Chậu cây cảnh</a></li>
+                            <li><a class="dropdown-item" href="products.html?cat=cay-de-ban">Cây để bàn</a></li>
+                            <li><a class="dropdown-item" href="products.html?cat=cay-thuy-sinh">Cây thủy sinh</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a id="nav-cart" class="nav-link" href="login.html">Giỏ hàng</a></li>
+                    <li class="nav-item"><a id="nav-fav" class="nav-link" href="login.html">Yêu thích</a></li>
                 </ul>
-            </li>
-            <li class="nav-item"><a id="nav-cart" class="nav-link" href="login.html">Giỏ hàng</a></li>
-            <li class="nav-item"><a id="nav-fav" class="nav-link" href="login.html">Yêu thích</a></li>
-            </ul>
-
-            <form id="searchForm" class="d-flex me-3">
-                <input id="searchInput" class="form-control me-2" type="search" placeholder="Tìm sản phẩm...">
-                <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-
-            <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-                <a id="accToggle" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Tài khoản</a>
-                <ul id="accMenu" class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="login.html">Đăng nhập</a></li>
-                <li><a class="dropdown-item" href="login.html#register">Đăng ký</a></li>
+                <form id="searchForm" class="d-flex me-3">
+                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Tìm sản phẩm...">
+                    <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a id="accToggle" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Tài khoản</a>
+                        <ul id="accMenu" class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="login.html">Đăng nhập</a></li>
+                        <li><a class="dropdown-item" href="login.html#register">Đăng ký</a></li>
+                        </ul>
+                    </li>
                 </ul>
-            </li>
-            </ul>
-        </div>
+            </div>
         </div>
     </nav>
-
-    <!-- CHI TIẾT SẢN PHẨM -->
-    <main class="container my-5" id="productDetail">
-        <!-- JS render nội dung -->
-    </main>
-
-    <!-- ĐÁNH GIÁ SẢN PHẨM -->
+    <main class="container my-5" id="productDetail"></main>
     <section class="container my-5">
         <h4 class="text-success mb-4">Đánh giá sản phẩm</h4>
-        <div id="reviewList" class="mb-4">
-        <!-- danh sách đánh giá -->
-        </div>
-
-        <!-- Form đánh giá (hiện khi user đã nhận hàng) -->
+        <div id="reviewList" class="mb-4"></div>
         <div id="reviewForm" class="border p-3 rounded shadow-sm d-none">
             <h5 class="mb-3">Viết đánh giá của bạn</h5>
             <input id="reviewName" type="text" class="form-control mb-2" placeholder="Tên người đánh giá">
@@ -77,14 +59,11 @@
             <button id="btnSubmitReview" class="btn btn-success">Gửi đánh giá</button>
         </div>
     </section>
-
-    <!-- FOOTER -->
     <footer class="bg-light text-center py-4">
         <div class="container">
-        <p class="mb-0">© 2025 GreenLife 🌿</p>
+            <p class="mb-0">© 2025 GreenLife 🌿</p>
         </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/products-data.js"></script>
     <script src="js/auth.js"></script>

@@ -32,7 +32,6 @@ table th, table td {
   }
 }
 
-/* Thanh navbar cho admin */
 @media (max-width: 576px) {
   .navbar-brand {
     font-size: 17px;
@@ -43,7 +42,6 @@ table th, table td {
   }
 }
 
-/* Giúp layout dễ đọc hơn trên mobile */
 @media (max-width: 576px) {
   .main-content, .container {
     padding: 10px !important;
@@ -53,7 +51,6 @@ table th, table td {
   }
 }
 
-/* Thẻ card sản phẩm trong admin-products.html */
 @media (max-width: 768px) {
   #productList .col-md-3, #productList .col-md-4 {
     flex: 0 0 50%;
@@ -67,7 +64,6 @@ table th, table td {
   }
 }
 
-/* Giúp biểu đồ tròn admin-revenue.html không bị tràn */
 @media (max-width: 768px) {
   .chart-box canvas {
     max-width: 100%;
@@ -75,7 +71,6 @@ table th, table td {
   }
 }
 
-/* Căn chỉnh danh sách khách hàng và đơn hàng */
 @media (max-width: 768px) {
   .customer-card, .order-card {
     flex-direction: column;

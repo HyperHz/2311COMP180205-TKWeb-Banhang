@@ -1,12 +1,8 @@
-
-// Hiển thị danh sách yêu thích cho người dùng
-
 const curUser = JSON.parse(localStorage.getItem('GL_currentUser') || 'null');
 if (!curUser) {
     alert('Bạn cần đăng nhập để xem danh sách yêu thích!');
     location.href = 'login.html';
 }
-
 
 const products = JSON.parse(localStorage.getItem('GL_products') || '[]');
 const wishlistKey = 'GL_favs_' + curUser.id;

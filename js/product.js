@@ -1,5 +1,3 @@
-
-// Hiển thị chi tiết sản phẩm, thêm giỏ hàng / yêu thích / đánh giá
 const products = JSON.parse(localStorage.getItem('GL_products') || '[]');
 const curUser = JSON.parse(localStorage.getItem('GL_currentUser') || 'null');
 const id = new URLSearchParams(location.search).get('id');
@@ -9,43 +7,39 @@ const reviewList = document.getElementById('reviewList');
 const reviewForm = document.getElementById('reviewForm');
 
 if (!product) {
-  productDetail.innerHTML = '<p class="text-center text-muted">Không tìm thấy sản phẩm.</p>';
+    productDetail.innerHTML = '<p class="text-center text-muted">Không tìm thấy sản phẩm.</p>';
 } else {
-  renderDetail();
-  renderReviews();
+    renderDetail();
+    renderReviews();
 }
 
-// render chi tiết sản phẩm
 function renderDetail(){
     productDetail.innerHTML = `
     <div class="product-wrap">
         <div class="product-left text-center">
-        <img src="${product.img}" alt="${product.name}" class="product-img">
+            <img src="${product.img}" alt="${product.name}" class="product-img">
         </div>
         <div class="product-right">
-        <h2>${product.name}</h2>
-        <p class="price">${product.price.toLocaleString()}₫</p>
-
-        <div class="d-flex align-items-center gap-2 my-3">
-            <input id="qty" type="number" value="1" min="1" class="form-control" style="width:90px">
-            <button class="btn-add" onclick="addToCart(${product.id})"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ</button>
-            <button class="btn-fav" onclick="toggleFav(${product.id})"><i class="fa-regular fa-heart"></i></button>
-        </div>
-
-        <div class="product-desc mt-4">
-            <h5>Mô tả sản phẩm</h5>
-            <p>${product.description.replace(/\n/g,'<br>')}</p>
-        </div>
-        <div class="product-care">
-            <h5>Cách chăm sóc</h5>
-            <p>${product.care}</p>
-        </div>
+            <h2>${product.name}</h2>
+            <p class="price">${product.price.toLocaleString()}₫</p>
+            <div class="d-flex align-items-center gap-2 my-3">
+                <input id="qty" type="number" value="1" min="1" class="form-control" style="width:90px">
+                <button class="btn-add" onclick="addToCart(${product.id})"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ</button>
+                <button class="btn-fav" onclick="toggleFav(${product.id})"><i class="fa-regular fa-heart"></i></button>
+            </div>
+            <div class="product-desc mt-4">
+                <h5>Mô tả sản phẩm</h5>
+                <p>${product.description.replace(/\n/g,'<br>')}</p>
+            </div>
+            <div class="product-care">
+                <h5>Cách chăm sóc</h5>
+                <p>${product.care}</p>
+            </div>
         </div>
     </div>
   `;
 }
 
-// thêm vào giỏ hàng
 function addToCart(id){
     if (!curUser) return location.href='login.html';
     const qty = parseInt(document.getElementById('qty').value);
@@ -58,7 +52,6 @@ function addToCart(id){
     alert('🛒 Đã thêm vào giỏ hàng!');
 }
 
-// toggle yêu thích
 function toggleFav(id){
     if (!curUser) return location.href='login.html';
     const key = 'GL_favs_' + curUser.id;
@@ -69,7 +62,6 @@ function toggleFav(id){
     alert('❤️ Đã cập nhật yêu thích');
 }
 
-// render đánh giá
 function renderReviews(){
     const key = 'GL_reviews_' + id;
     const reviews = JSON.parse(localStorage.getItem(key) || '[]');
@@ -85,13 +77,11 @@ function renderReviews(){
         `).join('');
     }
 
-  // giả lập điều kiện: chỉ cho hiển thị form khi user đã đăng nhập (hoặc đã nhận hàng)
     if (curUser && !curUser.isAdmin){
         reviewForm.classList.remove('d-none');
     }
 }
 
-// xử lý gửi đánh giá
 document.getElementById('btnSubmitReview').addEventListener('click', ()=>{
     const name = document.getElementById('reviewName').value.trim();
     const text = document.getElementById('reviewText').value.trim();

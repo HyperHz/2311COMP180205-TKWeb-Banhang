@@ -1,4 +1,3 @@
-/* Main styles */
 :root{
   --green: #2f7a2f;
   --brown: #7a5a3c;
@@ -14,12 +13,10 @@ body{
   color:#222;
 }
 
-/* NAVBAR */
 .navbar { background: #fff; }
 .navbar .navbar-brand { color: var(--green); }
 .navbar .nav-link {color: #333; }
 
-/* HEADER*/
 .header {
   display:flex;
   align-items:center;
@@ -40,7 +37,6 @@ body{
   box-shadow:0 10px 30px rgba(0,0,0,0.12);
 }
 
-/* Thẻ sp */
 .card-plant{
   border-radius:12px;
   overflow:hidden;
@@ -65,7 +61,6 @@ body{
   font-weight:700; 
 }
 
-/* nút yêu thích  */
 .btn-fav {
   background: var(--green);
   color: #fff;
@@ -74,18 +69,15 @@ body{
   padding:8px 10px;
 }
 
-/* hover */
 .card-plant:hover { 
   transform: translateY(-8px); 
   box-shadow:0 14px 40px rgba(0,0,0,0.12); 
 }
 
-/* FOOTER */
 footer { 
   color: var(--muted); 
 }
 
-/* REPONSIVE */
 @media (max-width:576px){
   .hero { flex-direction:column; text-align:center; }
   .hero-right { text-align:center; }

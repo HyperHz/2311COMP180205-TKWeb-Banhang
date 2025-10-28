@@ -1,14 +1,11 @@
 img{max-width:100%;height:auto;display:block}
 
-/* tạo lưới cho sp */
 .feature-col { margin-bottom:20px; }
 
-/* hiệu ứng hover chỉ xuất hiện trên máy tính */
 @media (hover: hover) and (pointer: fine) {
   .card-plant:hover { transform: translateY(-8px); }
 }
 
-/* Navbar nhỏ */
 @media (max-width:576px){
   .navbar-brand{font-size:18px}
   .nav-link{font-size:15px;padding:8px 0}
@@ -27,7 +24,7 @@ img{max-width:100%;height:auto;display:block}
 
 @media (max-width: 768px) {
   .header {
-    flex-direction: column-reverse; /* đảo vị trí: hình lên trên, chữ xuống dưới */
+    flex-direction: column-reverse;
     text-align: center;
   }
   .header .header-text {
